@@ -33,18 +33,11 @@ public class Algorithm1149 {
 	public static void main(String[] args) {
 
 		int[][] home = new int[1001][3];
-		//testCase(home);
 		showData(home);
 	}
 	
-	static void testCase(int[][] home) {
-		home[1][0]=26; home[1][1]=40; home[1][2]=83;
-		home[2][0]=49; home[2][1]=60; home[2][2]=57;
-		home[3][0]=13; home[3][1]=89; home[3][2]=99;
-		rgb(home,3);
-	}
-	
 	static void showData(int[][] home) {
+		Algorithm1149 a = new Algorithm1149();
 		Scanner s = new Scanner(System.in);
 		int count = s.nextInt();
 		for(int i=1;i<=count;i++) {
@@ -52,17 +45,17 @@ public class Algorithm1149 {
 			home[i][1]=s.nextInt();
 			home[i][2]=s.nextInt();
 		}
-		rgb(home,count);
+		System.out.println(a.rgb(home,count));
 		s.close();
 	}
 	
-	static void rgb(int[][] home,int count) {
+	int rgb(int[][] home,int count) {
 		for(int i=1;i<=count;i++) {
 			home[i][0] = Min(home[i-1][1],home[i-1][2])+home[i][0];
 			home[i][1] = Min(home[i-1][0],home[i-1][2])+home[i][1];
 			home[i][2] = Min(home[i-1][0],home[i-1][1])+home[i][2];
 		}
-		System.out.println(Min(home[count][0],Min(home[count][1],home[count][2])));
+		return Min(home[count][0],Min(home[count][1],home[count][2]));
 	}
 
 }

@@ -6,18 +6,18 @@ import static org.junit.Assert.assertThat;
 import org.junit.Before;
 import org.junit.Test;
 
-public class Algorithm10870Test {
+public class Algorithm2231Test {
 	
-	Algorithm10870 algo;
+	private Algorithm2231 algo;
 	
 	@Test
 	public void t0() {
-		int result = algo.zagui(0, 1, 10, 0);
-		assertThat(result, is(55));
+		int result = algo.SliceSum(216);
+		assertThat(result, is(198));
 	}
 	
 	@Before
 	public void init() {
-		algo = new Algorithm10870();
+		algo = new Algorithm2231();
 	}
 }

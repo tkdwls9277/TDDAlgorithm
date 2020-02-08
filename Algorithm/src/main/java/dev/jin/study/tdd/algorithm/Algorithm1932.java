@@ -37,21 +37,11 @@ public class Algorithm1932 {
 	
 	public static void main(String[] args) {
 		int[][] ract = new int[500][500];
-		//testCase(ract);
 		showData(ract);
 	}
-	
-	static void testCase(int[][] ract) {
-		ract[0][0]=7;
-		ract[1][0]=3; ract[1][1]=8;
-		ract[2][0]=8; ract[2][1]=1; ract[2][2]=0;
-		ract[3][0]=2; ract[3][1]=7; ract[3][2]=4; ract[3][3]=4;
-		ract[4][0]=4; ract[4][1]=5; ract[4][2]=2; ract[4][3]=6; ract[4][4]=5;
-		
-		Ract(ract,5);
-	}
-	
+
 	static void showData(int[][] ract) {
+		Algorithm1932 algo = new Algorithm1932();
 		Scanner s = new Scanner(System.in);
 		int count = s.nextInt();
 		for(int i=0;i<count;i++) {
@@ -59,11 +49,11 @@ public class Algorithm1932 {
 				ract[i][j]=s.nextInt();
 			}
 		}
-		Ract(ract,count);
+		System.out.println(algo.ract(ract,count));
 		s.close();
 	}
 	
-	static void Ract(int[][] ract, int count) {
+	public int ract(int[][] ract, int count) {
 		for(int i=1;i<count;i++) {
 			for(int j=0;j<=i;j++) {
 				if(j==0) {
@@ -82,7 +72,7 @@ public class Algorithm1932 {
 				temp=ract[count-1][i];
 			}
 		}
-		System.out.println(temp);
+		return temp;
 	}
 
 }

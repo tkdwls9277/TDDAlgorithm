@@ -28,33 +28,22 @@ import java.util.Scanner;
 public class Algorithm2231 {
 
 	public static void main(String[] args) {
-		
-		//test1();
-		
 		int result = getData();
-		
 		System.out.println(result);
 	}
 	
 	public static int getData() {
-		int number, result;
+		int number;
+		Algorithm2231 algo = new Algorithm2231();
 		Scanner s = new Scanner(System.in);
 		
 		number = s.nextInt();
-		result = SliceSum(number);
-		
 		s.close();
 		
-		return result;
-	}
-	
-	public static void test1() {
-		int result;
-		result = SliceSum(216);
-		System.out.println(result);
+		return algo.SliceSum(number);
 	}
 
-	public static int SliceSum(int num) {
+	public int SliceSum(int num) {
 		int temp, namurge;
 		int resultsum;
 		int result = 0;

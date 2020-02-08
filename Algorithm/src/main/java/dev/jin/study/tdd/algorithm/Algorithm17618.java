@@ -30,13 +30,18 @@ import java.util.Scanner;
  */
 public class Algorithm17618 {
     public static void main(String args[]) {
-    	int a;
+    	Algorithm17618 a = new Algorithm17618();
+    	Scanner s = new Scanner(System.in);
+    	int input = s.nextInt();
+    	int result = a.amazingnumber(input);
+    	System.out.println(result);
+    	s.close();
+    }
+    
+    public int amazingnumber(int a) {
     	int mok = 0, ext;
     	int sum = 0;
     	int count = 0;
-    	Scanner s = new Scanner(System.in);
-    	a = s.nextInt();
-    	
     	for(int i=1; i<=a; i++) {
     		mok = i;
     		sum = 0;
@@ -53,7 +58,6 @@ public class Algorithm17618 {
     		if(i % sum == 0)
     			count++;
     	}
-    	System.out.println(count);
-    	s.close();
+    	return count;
     }
 }

@@ -26,25 +26,11 @@ import java.io.*;
 public class Algorithm11047 {
 
 	public static void main(String[] args) throws IOException {
-		//test1();
-		//test2();
 		showData();
 	}
 	
-	public static void test1() {
-		int price = 4200;
-		int[] value = {1, 5, 10, 50, 100, 500, 1000, 5000, 10000, 50000};
-		int result = Coin(price, value);
-	}
-	
-	public static void test2() {
-		int price = 4750;
-		int[] value = {1, 5, 10, 50, 100, 500, 1000, 5000, 10000, 50000};
-		int result = Coin(price, value);
-		
-	}
-	
 	public static void showData() throws IOException{
+		Algorithm11047 a = new Algorithm11047();
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		String input = br.readLine();
@@ -55,13 +41,13 @@ public class Algorithm11047 {
 		for(int i=0;i<count;i++) {
 			value[i] = Integer.parseInt(br.readLine());
 		}
-		int result = Coin(price, value);
+		int result = a.Coin(price, value);
 		bw.write(String.valueOf(result));
 		bw.flush();
 		bw.close();
 	}
 	
-	public static int Coin(int price, int[] value) {
+	public int Coin(int price, int[] value) {
 		int result=0;
 		for(int i=value.length-1;i>=0;i--) {
 			if(price>=value[i]) {

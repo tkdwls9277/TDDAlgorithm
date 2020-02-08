@@ -26,11 +26,10 @@ import java.util.*;
 public class Algorithm15649 {
 	static int[] arr;
 	static boolean[] visit;
+	static String[] result;
 	
 	public static void main(String[] args) {
-		//test1();
-		//test2();
-		test3();
+		test1();
 		//showData();
 	}
 	
