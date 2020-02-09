@@ -36,48 +36,32 @@ import java.util.Scanner;
  */
 public class Algorithm2579 {
 
-	static int stairs[];
-	static int dp[];
+	static Algorithm2579 algo = new Algorithm2579();
+	
 	public static void main(String[] args) {
-		//test1();
-		showData();
+		algo.showData();
 	}
 	
-	static void test1() {
-		stairs = new int[7];
-		stairs[1]=10;
-		stairs[2]=20;
-		stairs[3]=15;
-		stairs[4]=25;
-		stairs[5]=10;
-		stairs[6]=20;
-
-		dp = new int[7];
-		dp[1]=stairs[1];
-		dp[2]=dp[1]+stairs[2];
-		getStairs(6, 3);
-		System.out.println(dp[6]);
-	}
-	
-	static void showData() {
+	void showData() {
 		int stairsnum;
 		Scanner s = new Scanner(System.in);
 		stairsnum = s.nextInt();
-		stairs = new int[stairsnum+1];
+		int[] stairs = new int[stairsnum+1];
 		for(int i=1;i<stairs.length;i++) {
 			stairs[i]=s.nextInt();
 		}
-		dp = new int[stairsnum+1];
+		int[] dp = new int[stairsnum+1];
 		dp[1]=stairs[1];
 		dp[2]=dp[1]+stairs[2];
-		getStairs(stairsnum, 3);
+		dp=algo.getStairs(stairsnum, 3, dp, stairs);
 		System.out.println(dp[stairsnum]);
 		s.close();
 	}
 	
-	static void getStairs(int end, int start) {
+	int[] getStairs(int end, int start, int[] dp, int[] stairs) {
 		for(int i=start;i<=end;i++) {
 			dp[i] = Math.max(dp[i-2]+stairs[i], dp[i-3]+stairs[i-1]+stairs[i]);
 		}
+		return dp;
 	}
 }

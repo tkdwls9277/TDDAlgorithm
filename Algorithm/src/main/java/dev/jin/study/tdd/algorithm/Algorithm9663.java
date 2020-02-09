@@ -24,47 +24,44 @@ public class Algorithm9663 {
 
 	private static int cols[];
 	private static int count;
+	static Algorithm9663 algo = new Algorithm9663();
 	
 	public static void main(String[] args) {
-		//test1();
-		//test2();
-		showData();
+		algo.showData();
 	}
 	
-	static void test1() {
-		cols = new int[8];
-		count=0;
-		Nqueen(8, 0);
-		System.out.println(count);
+	public void setCols(int a) {
+		cols = new int[a];
 	}
 	
-	static void test2() {
-		cols = new int[4];
-		count=0;
-		Nqueen(4, 0);
-		System.out.println(count);
+	public void setCount(int a) {
+		count = a;
 	}
 	
-	static void showData() {
+	public int showCount() {
+		return count;
+	}
+	
+	void showData() {
 		int Qnum;
 		Scanner s = new Scanner(System.in);
 		Qnum = s.nextInt();
 		cols = new int[Qnum];
 		count=0;
-		Nqueen(Qnum, 0);
+		algo.Nqueen(Qnum, 0);
 		System.out.println(count);
 		s.close();
 	}
 	
 	//퀸을 실질적으로 놓는 메소드
-	static void Nqueen(int Qnum, int level) {
+	void Nqueen(int Qnum, int level) {
 		if(level == Qnum) {
 			count=count+1;
 			return;
 		}else {
 			for(int i=0;i<Qnum;i++) {
 				cols[level]=i;
-				if(isPossible(level)) {
+				if(algo.isPossible(level)) {
 					Nqueen(Qnum,level+1);
 				}
 			}
@@ -72,7 +69,7 @@ public class Algorithm9663 {
 	}
 	
 	//현재 자리에 퀸을 놓을 수 있는지를 확인해주는 메소드
-	static boolean isPossible(int level) {
+	boolean isPossible(int level) {
 		for(int i=0;i<level;i++) {
 			if(cols[i]==cols[level] || Math.abs(level-i)==Math.abs(cols[level]-cols[i])) {
 				return false;
