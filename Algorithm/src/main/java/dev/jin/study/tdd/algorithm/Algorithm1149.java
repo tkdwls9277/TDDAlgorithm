@@ -28,16 +28,16 @@ import java.util.Scanner;
  */
 public class Algorithm1149 {
 	
-	public static int Min(int a, int b){ return a < b ? a : b; }
+	public int Min(int a, int b){ return a < b ? a : b; }
 	
 	public static void main(String[] args) {
-
+		Algorithm1149 algo = new Algorithm1149();
 		int[][] home = new int[1001][3];
-		showData(home);
+		algo.showData(home);
 	}
 	
-	static void showData(int[][] home) {
-		Algorithm1149 a = new Algorithm1149();
+	void showData(int[][] home) {
+		
 		Scanner s = new Scanner(System.in);
 		int count = s.nextInt();
 		for(int i=1;i<=count;i++) {
@@ -45,7 +45,7 @@ public class Algorithm1149 {
 			home[i][1]=s.nextInt();
 			home[i][2]=s.nextInt();
 		}
-		System.out.println(a.rgb(home,count));
+		System.out.println(rgb(home,count));
 		s.close();
 	}
 	

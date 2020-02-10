@@ -2,6 +2,10 @@ package dev.jin.study.tdd.algorithm;
 
 import java.util.Scanner;
 
+import lombok.Data;
+
+
+
 /**
  * 피보나치 수(재귀)
  * <a href="https://www.acmicpc.net/problem/10870">https://www.acmicpc.net/problem/10870</a>
@@ -25,8 +29,9 @@ import java.util.Scanner;
  * 
  * 깃 업로드 완료 <br>
  * 티스토리 업로드 완료
- */
+ */@Data
 public class Algorithm10870 {
+	 int a;
 	
 	public static void main(String args[]) {
 		Algorithm10870 z = new Algorithm10870();

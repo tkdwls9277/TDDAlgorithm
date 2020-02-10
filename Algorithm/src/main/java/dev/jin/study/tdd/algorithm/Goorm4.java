@@ -31,7 +31,9 @@ import java.io.*;
  *깃 업로드 완료<br>
  */
 public class Goorm4 {
+	
 	public static void main(String[] args) throws Exception {
+		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int count = Integer.parseInt(br.readLine());
 		String[] input = new String[count];

@@ -1,7 +1,10 @@
 package dev.jin.study.tdd.algorithm;
 
-import java.util.Scanner;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 /**
  * 동전 0 - 그리디 알고리즘
  * <a href="https://www.acmicpc.net/problem/11047">https://www.acmicpc.net/problem/11047</a>

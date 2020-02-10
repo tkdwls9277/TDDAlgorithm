@@ -23,11 +23,12 @@ import java.util.Scanner;
  */
 public class Algorithm9663 {
 
-	private static int cols[];
-	private static int count;
-	static Algorithm9663 algo = new Algorithm9663();
+	private int cols[];
+	private int count;
+	
 	
 	public static void main(String[] args) {
+		Algorithm9663 algo = new Algorithm9663();
 		algo.showData();
 	}
 	
@@ -49,7 +50,7 @@ public class Algorithm9663 {
 		Qnum = s.nextInt();
 		cols = new int[Qnum];
 		count=0;
-		algo.Nqueen(Qnum, 0);
+		Nqueen(Qnum, 0);
 		System.out.println(count);
 		s.close();
 	}
@@ -62,7 +63,7 @@ public class Algorithm9663 {
 		}else {
 			for(int i=0;i<Qnum;i++) {
 				cols[level]=i;
-				if(algo.isPossible(level)) {
+				if(isPossible(level)) {
 					Nqueen(Qnum,level+1);
 				}
 			}
