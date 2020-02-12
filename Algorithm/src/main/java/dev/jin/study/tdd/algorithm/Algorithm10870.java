@@ -31,8 +31,6 @@ import lombok.Data;
  * 티스토리 업로드 완료
  */@Data
 public class Algorithm10870 {
-	 int a;
-	
 	public static void main(String args[]) {
 		Algorithm10870 z = new Algorithm10870();
 		Scanner s = new Scanner(System.in);

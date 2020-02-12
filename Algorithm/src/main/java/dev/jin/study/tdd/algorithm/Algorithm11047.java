@@ -5,6 +5,8 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+
+import lombok.Data;
 /**
  * 동전 0 - 그리디 알고리즘
  * <a href="https://www.acmicpc.net/problem/11047">https://www.acmicpc.net/problem/11047</a>
@@ -25,7 +27,7 @@ import java.io.OutputStreamWriter;
  *</pre>
  *깃 업로드 완료<br>
  *
- */
+ */@Data
 public class Algorithm11047 {
 
 	public static void main(String[] args) throws IOException {
